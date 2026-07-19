@@ -1,25 +1,27 @@
 # 🛒 Easy-Mart
-### A Full Stack E-Commerce Web Application
+## Full Stack E-Commerce Web Application
 
 <p align="center">
   <img src="https://img.shields.io/badge/Java-17-orange?style=for-the-badge&logo=openjdk">
   <img src="https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?style=for-the-badge&logo=springboot">
-  <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react">
-  <img src="https://img.shields.io/badge/MySQL-Database-4479A1?style=for-the-badge&logo=mysql">
+  <img src="https://img.shields.io/badge/React.js-61DAFB?style=for-the-badge&logo=react&logoColor=black">
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
   <img src="https://img.shields.io/badge/JWT-Authentication-black?style=for-the-badge">
 </p>
 
 <p align="center">
-A secure and scalable Full Stack E-Commerce application built with Spring Boot, React, MySQL, and JWT Authentication.
+A secure Full Stack E-Commerce platform built using <b>Spring Boot</b>, <b>React.js</b>, <b>MySQL</b>, <b>Spring Security</b>, and <b>JWT Authentication</b>.
 </p>
 
 ---
 
-# 📖 Overview
+# 📖 Project Overview
 
-Easy-Mart is a modern e-commerce platform that allows customers to browse products, manage their shopping cart, and place orders while vendors can manage categories, products, inventory, and product images through secure role-based authentication.
+Easy-Mart is a full-stack e-commerce web application that provides separate interfaces for **Customers** and **Vendors**.
 
-The application follows a clean layered architecture and demonstrates modern full-stack development practices using Java Spring Boot and React.
+Customers can browse products, search and filter items, and purchase products, while vendors can securely manage categories, products, and inventory through role-based authentication.
+
+The project follows a layered architecture using Spring Boot REST APIs and React.js frontend applications.
 
 ---
 
@@ -30,37 +32,31 @@ The application follows a clean layered architecture and demonstrates modern ful
 - User Registration
 - Secure Login
 - JWT Authentication
+- Spring Security
 - BCrypt Password Encryption
 - Role-Based Authorization
 - Protected REST APIs
 
 ---
 
-## 👤 Customer Module
+## 👤 Customer Features
 
-- Register & Login
+- User Login
 - Browse Products
-- View Product Details
 - Search Products
-- Filter Products
-- Add to Cart
-- Update Cart
-- Remove Items
-- Place Orders
-- View Order History
+- Product Listing
+- Responsive UI
 
 ---
 
-## 🏪 Vendor Module
+## 🏪 Vendor Features
 
 - Vendor Login
-- Manage Categories
-- Manage Subcategories
-- Add Products
-- Update Products
-- Delete Products
-- Upload Product Images
-- Manage Inventory
+- Add Category
+- Add Sub Category
+- Add Product
+- Update Product
+- Manage Products
 
 ---
 
@@ -70,71 +66,61 @@ The application follows a clean layered architecture and demonstrates modern ful
 |----------|----------|----------|-------|
 | React.js | Java 17 | MySQL | Git |
 | Bootstrap 5 | Spring Boot | Hibernate | GitHub |
-| React Router | Spring Security | JPA | Postman |
-| Axios | JWT | | IntelliJ IDEA |
+| React Router DOM | Spring Security | Spring Data JPA | Postman |
+| Axios | JWT Authentication | | IntelliJ IDEA |
 | React Hook Form | Maven | | VS Code |
 
 ---
 
-# 🏗 Architecture
+# 🏗 System Architecture
 
-```
-React Frontend
-       │
-       ▼
-REST APIs
-       │
-       ▼
-Spring Boot Backend
-       │
-       ▼
-Spring Security + JWT
-       │
-       ▼
-MySQL Database
+```text
+React Customer App
+          │
+React Vendor App
+          │
+          ▼
+      REST APIs
+          │
+          ▼
+ Spring Boot Backend
+          │
+          ▼
+ Spring Security
+          │
+          ▼
+ JWT Authentication
+          │
+          ▼
+    MySQL Database
 ```
 
 ---
 
-# 📂 Project Structure
+# 📂 Repository Structure
 
-```
+```text
 Easy-Mart
 │
-├── Backend
-│   ├── controllers
-│   ├── services
-│   ├── repositories
-│   ├── entities
-│   ├── dto
-│   ├── configurations
-│   ├── jwt
-│   └── enums
-│
-└── Frontend
-    ├── components
-    ├── pages
-    ├── services
-    ├── routes
-    ├── assets
-    └── utils
+├── customer/                # React Customer Application
+├── vendor/                  # React Vendor Application
+├── src/                     # Spring Boot Backend Source Code
+├── uploads/                 # Product Images
+├── Screenshots E-commerce/  # Project Screenshots
+├── pom.xml
+└── README.md
 ```
 
 ---
 
 # 🔒 Security
 
-✔ Spring Security
-
-✔ JWT Authentication
-
-✔ BCrypt Password Encryption
-
-✔ Role-Based Access Control
-
-✔ Protected REST APIs
-
-✔ CORS Configuration
+- ✅ Spring Security
+- ✅ JWT Authentication
+- ✅ BCrypt Password Encryption
+- ✅ Role-Based Authorization
+- ✅ Protected REST APIs
+- ✅ CORS Configuration
 
 ---
 
@@ -146,8 +132,6 @@ Easy-Mart
 - Category
 - SubCategory
 - Product
-- Cart
-- Orders
 
 ---
 
@@ -155,23 +139,27 @@ Easy-Mart
 
 ### Authentication
 
-```
+```http
 POST /register
 POST /login
 ```
 
 ### Categories
 
-```
+```http
 GET    /get/categories
 POST   /vendor/categories
-PUT    /vendor/categories/{id}
-DELETE /vendor/categories/{id}
+```
+
+### Sub Categories
+
+```http
+POST   /vendor/subcategories
 ```
 
 ### Products
 
-```
+```http
 GET    /get/products
 GET    /get/products/{id}
 POST   /vendor/products
@@ -179,32 +167,16 @@ PUT    /vendor/products/{id}
 DELETE /vendor/products/{id}
 ```
 
-### Cart
-
-```
-GET    /customer/cart
-POST   /customer/cart
-PUT    /customer/cart
-DELETE /customer/cart/{id}
-```
-
-### Orders
-
-```
-POST /customer/orders
-GET  /customer/orders
-```
-
 ---
 
 # 🎯 Key Concepts
 
 - Object-Oriented Programming
-- RESTful APIs
 - MVC Architecture
-- Dependency Injection
+- REST APIs
 - Spring Security
 - JWT Authentication
+- Dependency Injection
 - Repository Pattern
 - DTO Pattern
 - Exception Handling
@@ -219,7 +191,7 @@ GET  /customer/orders
 ## Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/easy-mart.git
+git clone https://github.com/jayeshshinde700/Easy-Mart---Full-Stack-E-Commerce-Website.git
 ```
 
 ---
@@ -227,17 +199,26 @@ git clone https://github.com/yourusername/easy-mart.git
 ## Backend
 
 ```bash
-cd backend
 mvn clean install
 mvn spring-boot:run
 ```
 
 ---
 
-## Frontend
+## Customer Frontend
 
 ```bash
-cd frontend
+cd customer
+npm install
+npm start
+```
+
+---
+
+## Vendor Frontend
+
+```bash
+cd vendor
 npm install
 npm start
 ```
@@ -246,29 +227,67 @@ npm start
 
 ## Database
 
-Create a MySQL database
+Create the database
 
 ```sql
 CREATE DATABASE easy_mart;
 ```
 
-Update your database configuration inside
+Update the MySQL configuration inside
 
-```
+```text
 application.properties
 ```
 
 ---
 
-# 📸 Screenshots
+# 📸 Project Screenshots
 
-| Home | Products |
-|------|----------|
-| Add Screenshot | Add Screenshot |
+## 🏠 Home Page
 
-| Cart | Vendor Dashboard |
-|------|------------------|
-| Add Screenshot | Add Screenshot |
+![Home](Screenshots%20E-commerce/home.png)
+
+---
+
+## 🔑 Login Page
+
+![Login](Screenshots%20E-commerce/login.png)
+
+---
+
+## 🛍 Product Listing
+
+![Products](Screenshots%20E-commerce/products.png)
+
+---
+
+## ➕ Add Category
+
+![Add Category](Screenshots%20E-commerce/add-category.png)
+
+---
+
+## 📂 Add Sub Category
+
+![Add Sub Category](Screenshots%20E-commerce/add-sub_category.png)
+
+---
+
+## ➕ Add Product
+
+![Add Product](Screenshots%20E-commerce/add-product.png)
+
+---
+
+## ✏️ Update Product
+
+![Update Product](Screenshots%20E-commerce/vendor-update_product.png)
+
+---
+
+## 🏪 Vendor Dashboard
+
+![Vendor Dashboard](Screenshots%20E-commerce/vendor-dashboard.png)
 
 ---
 
@@ -277,27 +296,28 @@ application.properties
 - 💳 Payment Gateway Integration
 - ❤️ Wishlist
 - ⭐ Product Reviews & Ratings
-- 📦 Order Tracking
+- 📦 Shopping Cart & Checkout
 - 📧 Email Notifications
 - 📊 Admin Dashboard
-- 🔍 Advanced Search
+- 🔍 Advanced Search & Filters
 - 📄 Pagination
-- 🌐 Google Login
-- 🔐 Forgot Password & OTP
+- 🌐 Google Authentication
+- 🔐 Forgot Password
 
 ---
 
-# 📚 What I Learned
+# 📚 Learning Outcomes
 
-- Building a Full Stack Application
-- Secure Authentication with JWT
+- Full Stack Application Development
+- Spring Boot REST API Development
+- React.js Frontend Development
+- JWT Authentication
 - Spring Security
-- REST API Development
-- React Routing
-- API Integration
-- Database Design
-- File Upload Handling
+- MySQL Database Design
 - Role-Based Authorization
+- REST API Integration
+- CRUD Operations
+- File Upload Handling
 
 ---
 
@@ -307,7 +327,7 @@ application.properties
 
 **Aspiring Full Stack Java Developer**
 
-**Skills**
+### Skills
 
 - Java
 - Spring Boot
@@ -317,8 +337,13 @@ application.properties
 - JWT Authentication
 - Git & GitHub
 
+### Connect with Me
+
+- 💼 LinkedIn: https://www.linkedin.com/in/jayeshshinde700
+- 📧 Email: jayeshshinde700@gmail.com
+
 ---
 
-## ⭐ Support
+## ⭐ If you like this project
 
-If you found this project helpful, consider giving it a ⭐ on GitHub!
+Please consider giving this repository a ⭐ on GitHub!
